@@ -1,0 +1,21 @@
+@import '../utility/utility.scss';
+
+.headerStyles {
+    background-color: $interact-blue;
+    border-radius: $border-radius-default;
+    padding: $half-default-padding;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(1px, 1fr));
+    gap: 10px;
+    margin-bottom: $default-padding;
+    transition: grid-column 0.3s ease-in-out;
+}
+.headerChild {
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-size: $font-size-large;
+    overflow: hidden;
+    transition: grid-column 0.3s ease-in-out;
+}
