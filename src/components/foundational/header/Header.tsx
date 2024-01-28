@@ -7,7 +7,6 @@ const Header: React.FC<HeaderProps> = ({ children, selected, setSelected }) => {
     return (
         <header className={styles.headerStyles}>
             {React.Children.map(children, (child, index) => (
-                // TODO find solution for key
 
                 <button
                     key={child.props.uniqueId}

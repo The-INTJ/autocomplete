@@ -20,10 +20,7 @@ function App() {
   const [selectedView, setSelectedView] = useState<number>(1);
   const { users: headerUsers } = useContext(UserHeaderContext);
 
-  const handleUserSelect = (user: UserType | undefined) => {
-    setSelectedUser(user);
-  };
-
+  // Overkill HOC demonstration
   const HeaderAboutWithUniqueId = WithUniqueId(HeaderAbout);
   const HeaderAutocompleteWithUniqueId = WithUniqueId(HeaderAutocomplete);
 
@@ -39,7 +36,7 @@ function App() {
       <ViewSwitch index={selectedView}>
         <About />
         <div>
-          <AutocompleteWrapper onUserSelect={handleUserSelect} users={users} />
+          <AutocompleteWrapper onUserSelect={setSelectedUser} users={users} />
           <UserInfo user={selectedUser} />
         </div>
         <HeaderUserList 
