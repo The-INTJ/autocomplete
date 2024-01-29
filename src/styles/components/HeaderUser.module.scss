@@ -18,17 +18,3 @@
     color: #333;
     font-size: 16px;
 }
-
-.userCard button {
-    background-color: $interact-blue;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    padding: 10px 15px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.userCard button:hover {
-    background-color: #0056b3;
-}

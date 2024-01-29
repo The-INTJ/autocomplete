@@ -13,7 +13,7 @@
 }
 
 @mixin default-button-styles() {
-  background-color: #333333;
+  background-color: $black;
   border-radius: 8px;
   border-width: 0;
   color: $white;
@@ -35,10 +35,15 @@
   white-space: nowrap;
   text-overflow: ellipsis;
   display: block;
+  transition: transform 0.1s ease;
 
   &:hover {
-    background-color: rgba(51, 51, 51, 0.3);
+    background-color: $impending-action;
     box-shadow: 0px 0px 10px 1px white;
+  }
+
+  &:active {
+    transform: scale(0.95);
   }
 }
 

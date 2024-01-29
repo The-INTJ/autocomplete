@@ -14,10 +14,6 @@ export type UniqueChildren = {
     uniqueId: number;
 };
 
-export type UniqueChildProps = {
-    uniqueId: string;
-};
-
 export type HeaderProps = {
     children: React.ReactElement<UniqueChildren>[];
     selected: number;

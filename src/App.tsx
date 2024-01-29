@@ -5,7 +5,7 @@ import AutocompleteWrapper from "./components/AutocompleteWrapper";
 import UserInfo from "./components/UserInfo";
 import Header from "./components/foundational/header/Header";
 import styles from "./styles/foundational/App.module.scss";
-import ViewSwitch from "./components/ViewSwitch";
+import ViewSwitch from "./components/foundational/ViewSwitch";
 import { UserHeaderContext } from "./lib/UsersInHeaderContext";
 import About from "./components/About";
 import HeaderUserList from "./components/HeaderUserList";
@@ -15,7 +15,7 @@ import HeaderAutocomplete from "./components/foundational/header/Autocomplete";
 
 
 function App() {
-  const users: UserType[] = useUsers(); // lifted state to prevent re-renders on view switch
+  const users: UserType[] = useUsers(); // lifted state to prevent API call on view switch
   const [selectedUser, setSelectedUser] = useState<UserType | undefined>(undefined);
   const [selectedView, setSelectedView] = useState<number>(1);
   const { users: headerUsers } = useContext(UserHeaderContext);
@@ -29,9 +29,9 @@ function App() {
       <Header
         selected={selectedView}
         setSelected={setSelectedView} >
-        <HeaderAboutWithUniqueId />
-        <HeaderAutocompleteWithUniqueId />
-        <HeaderUserList users={headerUsers} />
+          <HeaderAboutWithUniqueId />
+          <HeaderAutocompleteWithUniqueId />
+          <HeaderUserList users={headerUsers} />
       </Header>
       <ViewSwitch index={selectedView}>
         <About />

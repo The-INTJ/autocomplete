@@ -14,21 +14,19 @@ const UserInfo: React.FC<UserInfoProps> = ({ user }) => {
         }
     }
 
-    return (
+    return user ? (
         <>
             <p>
-                {user?.name}<br />
-                {user?.address?.street}<br />
-                {user?.address?.suite}<br />
-                {user?.address?.zipcode}
+                {user.name}<br />
+                {user.address?.street}<br />
+                {user.address?.suite}<br />
+                {user.address?.zipcode}
             </p>
-            {user && (
-                <button onClick={() => safelyAddUser(user)}>
-                    Add to header?
-                </button>
-            )}
+            <button onClick={() => safelyAddUser(user)}>
+                Add to header?
+            </button>
         </>
-    );
+    ) : null;
 };
 
 export default UserInfo;

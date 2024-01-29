@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Autocomplete, TextField } from '@mui/material';
 import { useId } from 'react';
 import { formatName } from "../lib/helpers";
