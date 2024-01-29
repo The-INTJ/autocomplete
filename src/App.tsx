@@ -29,19 +29,23 @@ function App() {
       <Header
         selected={selectedView}
         setSelected={setSelectedView} >
-          <HeaderAboutWithUniqueId />
-          <HeaderAutocompleteWithUniqueId />
-          <HeaderUserList users={headerUsers} />
+        <HeaderAboutWithUniqueId />
+        <HeaderAutocompleteWithUniqueId />
+        <HeaderUserList users={headerUsers} />
       </Header>
       <ViewSwitch index={selectedView}>
         <About />
         <div>
+          <h1>Autocomplete field</h1>
           <AutocompleteWrapper onUserSelect={setSelectedUser} users={users} />
           <UserInfo user={selectedUser} />
         </div>
-        <HeaderUserList 
-          users={headerUsers}
-          canRemove />
+        <div>
+          <h1>Users</h1>
+          <HeaderUserList
+            users={headerUsers}
+            canRemove />
+        </div>
       </ViewSwitch>
     </div>
   );
